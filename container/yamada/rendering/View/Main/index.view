@@ -1,0 +1,7 @@
+[Module Yamada]
+Hallo World!!
+
+
+<?php echo $this->Response->viewPart("sample"); ?>
+/
+<?php echo $this->Response->parentViewPart("sample"); ?>

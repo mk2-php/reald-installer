@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+
+MODULE YAMADA HEADER
+<hr>
+
+<?php echo $this->Response->content(); ?>
+
+<hr>
+
+FOOTER...
+</body>
+</html>

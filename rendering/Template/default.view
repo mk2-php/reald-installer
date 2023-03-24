@@ -1,0 +1,12 @@
+Header...
+
+<hr>
+
+<div class="content">
+    <?php echo $this->Response->content(); ?>
+</div>
+
+<hr>
+<footer>
+        <p>Footer...</p>
+</footer>

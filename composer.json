@@ -1,0 +1,11 @@
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "../reald-core/"
+        }
+    ],
+    "require": {
+        "reald/core" : "dev-main"
+    }
+}

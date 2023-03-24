@@ -1,0 +1,75 @@
+.contents, body{
+    background:#333;
+}
+.sidemenu{
+    position:fixed;
+    left:0;
+    top:0;
+    width:270px;
+    height:100%;
+    background:#222;
+    z-index:100;
+    border-right:solid 1px #999;
+    padding:20px;
+}
+.sidemenu+.contents{
+    margin-left:270px;
+}
+.sidemenu .head{
+    padding-bottom:20px;
+    border-bottom:solid 1px #888;
+    margin-bottom:20px;
+}
+.sidemenu .menu p,
+.sidemenu .menu a{
+        color:#eee;
+}
+.sidemenu h1 a{
+
+    color:#eee;
+}
+.sidemenu h1{
+    font-weight:normal;
+    font-size:22px;
+}
+.sidemenu ul{
+    margin-bottom:10px;
+}
+.sidemenu ul li ul{
+    margin-left:20px;
+}
+#send-message{
+    display:none;
+}
+
+.send-message,
+.danger-message{
+    position:fixed;
+    left:50%;
+    top:30px;
+    background:#274;
+    color:#fff;
+    width:100%;
+    max-width:800px;
+    transform:translateX(-50%);
+    padding:10px 30px;
+    font-size:15px;
+    z-index:1002;
+}
+.danger-message{
+    background:#930;
+}
+.send-message label,
+.danger-message label{
+    margin-right:20px;
+    font-size:15px;
+    padding:10px;
+    position:absolute;
+    cursor:pointer;
+    left:0;
+    top:0;
+}
+#send-message:checked+.send-message,
+#danger-message:checked+.danger-message{
+    display:none;    
+}

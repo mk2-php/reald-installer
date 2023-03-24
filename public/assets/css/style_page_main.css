@@ -1,0 +1,276 @@
+.contents{
+    background:#444;
+    padding:0;
+}
+.main{
+    font-size:15px;
+}
+.main table{
+    width:100%;
+    border:none;
+    margin:0;
+}
+.main table tr td,
+.main table tr td:nth-child(even),
+.main table tr td:nth-child(odd){
+    background:none;
+    border:none;
+    padding:0 40px;
+    vertical-align:top;
+    width:50%;
+    position:relative;
+}
+.main table tr td .title{
+    background:#222;
+    padding:70px 40px;
+    padding-bottom:0;
+    margin:0;
+}
+.main table tr td .title h1{
+    font-weight:100;
+    font-size:50px;
+    letter-spacing:3px;
+}
+.main table tr td .title .sub{
+    font-size:18px;
+    margin:0;
+}
+.main table tr td.titles{
+    padding:40px;
+}
+.main table tr td h2{
+    font-size:1.5rem;
+    margin-bottom:20px;
+}
+.main pre{
+    margin:0;
+}
+.main code.hljs{
+    margin:0;
+}
+.main .title_area{
+    background:#222;
+    margin:-40px;
+    padding:40px;
+    margin-bottom:0;
+}
+.main .link{
+    padding:20px 40px;
+    padding-top:30px;
+}
+.main .link a{
+    color:#fff;
+    font-size:16px;
+    display:inline-block;
+    padding:15px 0;
+    margin-right:10px;
+    width:270px;
+    padding-left:20px;
+}
+.main .link a span{
+    display:block;
+    font-size:13px;
+}
+.main .link a.dlinstall{
+    background:#26a;
+}
+.main .link a.doc{
+    background:#282;
+}
+.main .link a.tutorial{
+    background:#952;
+}
+.main .link a:hover{
+    text-decoration:none;
+}
+.main .search{
+    margin:0px 40px;
+}
+.main .search input{
+    max-width:500px;
+    width:100%;
+}
+.main .install{
+    background:#333;
+    padding:40px;
+}
+.main .history{
+    background:#222;
+    padding:40px;
+    background:#323232;
+}
+.main .history ul,
+.main .history ul li{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+}
+.main .history ul li{
+	margin-bottom:10px;
+}
+.main .history ul li a{
+    color:#eee;
+}
+.main .history ul li a:hover{
+    text-decoration:none;
+}
+.main .history ul li p{
+    display:inline-block;
+    margin:0;
+    font-size:14px;
+}
+.main .history ul li p:nth-child(1){
+    width:100px;
+}
+.main .history ul li p:nth-child(2){
+    width:50px;
+	margin-right:20px;
+	font-size:13px;
+}
+.main .history ul li p.new{
+	background:#a31;
+	text-align:center;
+}
+.main .history ul li p.new:before{
+	content:"New";
+}
+.main table tr.list1 td{
+	padding-bottom:40px;
+}
+.main table tr.list2 td{
+	padding-bottom:40px;	
+}
+.main table tr.list3 td{
+    padding-top:40px;
+    padding-bottom:40px;
+}
+.main .spec{
+    position:absolute;
+    left:0px;
+    right:40px;
+    top:0px;
+    bottom:40px;;
+    padding:40px;
+    background:#323232;
+}
+.main .spec ul{
+    margin:0;
+    list-style-type:none;
+    padding:0;
+}
+.main .spec ul li{
+    font-size:16px;
+    margin-bottom:5px;
+}
+.main .other{
+    position:absolute;
+    left:0px;
+    right:40px;
+    top:40px;
+    bottom:40px;
+    padding:40px;
+    background:#323232;
+}
+.main .other a{
+    display:inline-block;
+    margin-right:10px;
+}
+
+@media screen and (max-width:1200px){
+    .main{
+        font-size:13px;
+    }
+    .main table tr td .title .sub{
+        font-size:15px;
+    }
+    .main table tr td h2{
+        font-size:1.3rem;
+        margin-bottom:15px;
+    }
+    .main .spec ul li{
+        font-size:13px;
+    }
+    .main .history ul li p{
+        font-size:13px;
+    }
+    .main .link a{
+        font-size:15px;
+        padding-left: 15px;
+        width:240px;
+    }
+    .main table tr td,
+    .main table tr td:nth-child(even),
+    .main table tr td:nth-child(odd){
+        padding: 0 20px;
+    }
+    .main table tr td.titles{
+        padding-top:20px;
+    }
+    .main table tr td .title{
+        padding: 50px 30px;
+    }
+    .main .link {
+        padding:20px 30px;
+        padding-top: 30px;
+    }
+
+    .main table tr.list2 td{
+        padding-top:20px;
+    }
+    .main .spec {
+        left: 0px;
+        right: 20px;
+        top:20px;
+        bottom: 0;
+        padding: 20px;
+    }
+    .main .install {
+        padding: 20px;
+    }
+    .main .history{
+        margin-bottom:20px;
+        padding:20px;
+    }
+}
+@media screen and (max-width:867px){
+    .main .title_area{
+        padding:30px;
+        margin:0;
+    }
+    .main table tr td .title h1{
+        font-size:36px;
+    }
+    .main table tr td .title .sub{
+        font-size:13px;
+    }
+    .main .link a{
+        display:block;
+        width:auto;
+        float:none;
+        margin-top:10px;
+        padding:10px;
+    }
+    .main table tr td .title{
+        padding:20px;
+    }
+    .main .link{
+        padding:20px;
+    }
+    .main table,
+    .main table tr,
+    .main table tbody{
+        padding:0;
+        display:block;
+    }
+    .main table tr td, 
+    .main table tr td:nth-child(even),
+    .main table tr td:nth-child(odd){        
+        padding:0;
+        display:block;
+        width:auto;
+        height:auto;
+    }
+    .main .spec{
+        position:static;
+    }
+}

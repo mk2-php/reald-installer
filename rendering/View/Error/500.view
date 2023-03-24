@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+<Style>
+body{
+    padding:0;
+    margin:0;
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+}
+.title{
+    background:#333;
+    color:#eee;
+    padding:0 20px;
+    position:fixed;
+    left:0;
+    width:100%;
+    top:0;
+    height:70px;
+}
+.title span{
+    background:#c00;
+    padding:2px 10px;
+    margin-right:10px;
+}
+.title div{
+    font-size:13px;
+    margin-top:10px;
+}
+.title h1{
+    font-size:18px;
+    margin:0;
+    margin-top:10px;
+}
+.content .trace{
+    vertical-align:top;
+    width:300px;
+    background:#555;
+    color:#fff;
+    width:100%;
+    position:fixed;
+    top:70px;
+    left:0;
+    bottom:0;
+    width:300px;
+    overflow:auto;
+}
+.content .trace .sec{
+    display:block;
+    color:#fff;
+    padding:10px;
+    border-bottom:dashed 1px #ccc;
+    font-size:14px;
+    text-decoration:none;
+}
+.content .trace .sec.active{
+    background:#424;
+}
+.content .trace .sec .path{
+    font-size:11px;
+    color:#ccc;
+}
+.content .trace-content{
+    position:fixed;
+    left:300px;
+    top:70px;
+    right:0;
+    bottom:0;
+    padding:20px;
+    overflow:auto;
+    background:#444;
+    color:#eee;
+}
+.content .trace-content pre{
+    margin:0;
+}
+.content .trace-content .line{
+    display:table;
+    width:100%;
+}
+.content .trace-content .line.active{
+    background:#855;
+}
+.content .trace-content .lineNo{
+    display:table-cell;
+    width:40px;
+    font-size:13px;
+    padding:5px;
+    border-right:solid 1px #ccc;
+}
+.content .trace-content .code{
+    padding:5px;
+    font-size:14px;
+}
+.content .trace-content .code pre{
+    font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+
+    letter-spacing:1px;
+}
+</style>
+
+</head>
+<body>
+
+<div class="title">
+    <div><span>500 INTERNAL SERVER ERROR</span><?php echo $exception->getFile() . " (" . $exception->getLine(). ")"; ?></div>
+    <h1><?php echo $exception->getMessage(); ?></h1>
+</div>
+<?php
+$traceNo = 0;
+if($this->Request->query("trace_no")){
+    $traceNo = $this->Request->query("trace_no");
+}
+?>
+<div class="content">
+    <div class="trace">
+        <a href="<?php echo $this->Response->url(); ?>" class="sec <?php if($traceNo == 0){ echo "active"; } ?>">
+            <div class="path"><?php echo dirname($exception->getFile()); ?></div>
+            <div class="file"><?php echo basename($exception->getFile()) ." (" . $exception->getLine().")";  ?></div>
+        </a>
+        <?php 
+        $trace = $exception->getTrace();
+        foreach($trace as $ind => $t_){
+            ?>
+            <a href="<?php echo $this->Response->url(); ?>?trace_no=<?php echo $ind + 1; ?>" class="sec  <?php if($traceNo == ($ind + 1)){ echo "active"; } ?>">
+                <div class="path"><?php echo dirname($t_["file"]); ?></div>
+                <div class="file"><?php echo basename($t_["file"]) ." (" . $t_["line"].")";  ?></div>
+            </a>
+            <?php
+        }
+        ?>
+    </div>
+    <div class="trace-content">
+        <?php
+
+        if($traceNo){
+            $getTrace = $trace[$traceNo - 1];
+            $fileName = $getTrace["file"];
+            $getContent = file_get_contents($fileName);    
+            $line = $getTrace["line"];
+        }
+        else{
+            $fileName = $exception->getFile();
+            $getContent = file_get_contents($fileName);    
+            $line = $exception->getLine();
+        }
+        ?>
+
+        <div class="file">
+            <div class="path"><?php echo dirname($fileName); ?></div>
+            <div class="file"><?php echo basename($fileName) . " (" . $line .")"; ?></div>
+        </div>
+
+        <?php
+        $getContentLine = explode("\n",$getContent);
+
+        $getArea = "";
+        for($ind = ($line - 8) ; $ind < ($line + 8) ; $ind++){
+            if(!empty($getContentLine[$ind] )){
+                ?>
+                <div class="line <?php
+                    if($ind == $line){
+                        echo "active";
+                    }
+                ?>">
+                    <div class="lineNo"><?php echo $ind; ?></div>
+                    <div class="code"><pre><?php echo htmlspecialchars($getContentLine[$ind]); ?></pre></div>
+                </div>
+                
+                <?php    
+            }
+        }
+        ?>
+
+
+
+    </div>
+</div>
+
+</body>
+</html>
