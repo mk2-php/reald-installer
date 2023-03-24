@@ -99,7 +99,7 @@ return [
 	 *'  database'=>Config::require("database.php"),
 	 *  
 	 */
-	'database'=>Config::require("database.php"),
+	'database' => Config::require("database.php"),
 
 	/**
 	 *  [middleware]

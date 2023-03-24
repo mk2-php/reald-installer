@@ -8,6 +8,8 @@ use Reald\Core\Controller;
 use App\Model\TestModel;
 use App\Pack\TestPack;
 
+use App\Table\Test01Table;
+
 class MainController extends Controller{
 
     public function handleBefore(){
@@ -16,16 +18,9 @@ class MainController extends Controller{
             ->setAutoRender(true)
             ->setTemplate("default")
         ;
-    }
+   }
 
-    public function index(){
-/*
-        $this->Response->hookReceive("sample", "test", [
-            "aaa","bbb",
-        ]);
-*/
-//        Debug::useMemory();
-    }
+    public function index(){}
 
     public function index_post(){
 

@@ -3,9 +3,14 @@
         {
             "type": "vcs",
             "url": "../reald-core/"
+        },
+        {
+            "type": "vcs",
+            "url": "../reald-orm/"
         }
     ],
     "require": {
-        "reald/core" : "dev-main"
+        "reald/core" : "dev-main",
+        "reald/orm" : "dev-master"
     }
 }
