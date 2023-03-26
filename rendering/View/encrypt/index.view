@@ -1,0 +1,89 @@
+<h2>Encrypt Sample</h2>
+
+<?php
+echo $form->start();
+echo $form->hidden("mode",1);
+?>
+
+<h3>Encode</h3>
+
+<table>
+<tr>
+    <th>name1</th>
+    <td>
+        <?php echo $form->input("name1"); ?>
+    </td>
+</tr>
+<tr>
+    <th>name2</th>
+    <td>
+        <?php echo $form->input("name2"); ?>
+    </td>
+</tr>
+<tr>
+    <th>name3</th>
+    <td>
+        <?php echo $form->input("name3"); ?>
+    </td>
+</tr>
+<tr>
+    <th></th>
+    <td>
+        <?php echo $form->submit("encode"); ?>
+    </td>
+</tr>
+<?php
+if(!empty($encStr)){
+?>
+<tr>
+    <td>encode string</td>
+    <td>
+        <textarea readonly style="width:500px;height:100px"><?php echo $encStr; ?></textarea>
+    </td>
+</tr>
+<?php
+}
+?>
+</table>
+
+<?php echo $form->end(); ?>
+
+<hr>
+
+<?php
+echo $form->start();
+echo $form->hidden("mode",2);
+?>
+
+<h3>DeCode</h3>
+
+<table>
+<tr>
+    <th>encode string</th>
+    <td>
+        <?php echo $form->textarea("encode", ["style" => "width:400px;height:150px"]); ?>
+    </td>
+</tr>
+<tr>
+    <th></th>
+    <td>
+        <?php echo $form->submit("encode"); ?>
+    </td>
+</tr>
+<?php
+if(!empty($decode)){
+?>
+<tr>
+    <th>decode</th>
+    <td>
+        <pre><?php print_r($decode); ?></pre>
+    </td>
+</tr>
+<?php
+}
+?>
+</table>
+
+<?php
+echo $form->end();
+?>

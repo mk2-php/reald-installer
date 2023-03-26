@@ -1,0 +1,87 @@
+
+<h2>FormUI Sample</h2>
+
+<?php
+echo $form->start([
+    "onFile"=>true,
+]);
+?>
+
+<table>
+<tr>
+    <th>name</th>
+    <td>
+        <?php 
+        echo $form->input("name",[
+            "style" => "width:300px",
+        ]);
+        echo $form->error("name");
+        ?>
+    </td>
+</tr>
+<tr>
+    <th>select</th>
+    <td>
+        <?php 
+        $selector = [
+            0 => "select 0",
+            1 => "select 1",
+            2 => "select 2",
+            3 => "select 3",
+        ];
+        echo $form->select("select", $selector,[
+            "empty" => "--- select ---",
+            "style" => "width:200px",
+        ]);
+        echo $form->error("select");
+        ?>
+    </td>
+</tr>
+<tr>
+    <th>textarea</th>
+    <td>
+        <?php 
+        echo $form->textarea("textarea",[
+            "style" => "width:300px",
+        ]);
+        echo $form->error("textarea");
+        ?>
+    </td>
+</tr>
+<tr>
+    <th>radio</th>
+    <td>
+        <?php 
+        $radio = [
+            0 => "radio 0",
+            1 => "radio 1",
+            2 => "radio 2",
+            3 => "radio 3",
+        ];
+        echo $form->radio("radio", $radio);
+        echo $form->error("radio");
+        ?>
+    </td>
+</tr>
+<tr>
+    <th>checkbox</th>
+    <td>
+        <?php 
+        $checkbox = [
+            0 => "checkbox 0",
+            1 => "checkbox 1",
+            2 => "checkbox 2",
+            3 => "checkbox 3",
+        ];
+        echo $form->checkbox("checkbox", $checkbox);
+        echo $form->error("checkbox");
+        ?>
+    </td>
+</tr>
+<tr>
+    <td></td>
+    <td><?php echo $form->submit("Send"); ?></td>
+</tr>
+</table>
+
+<?php echo $form->end(); ?>

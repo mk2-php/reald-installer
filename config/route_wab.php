@@ -2,7 +2,12 @@
 
 return [
     "/" => "controller:main|action:index|middleware:test",
-    "post|/" => "controller:main|action:index_post",
+    "/test" => [
+        "/formui" => "controller:formui|action:index",
+        "/log" => "controller:log|action:index",
+        "/encrypt" => "controller:encrypt|action:index",
+        "/session" => "controller:session|action:index",
+    ],
     "/p2" => [
         "/" => "controller:p2|action:index",
         "/edit" => [

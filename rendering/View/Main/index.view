@@ -1,1 +1,6 @@
 Main Controller View... OK
+
+<p><a href="<?php echo $this->Response->url("test/formui"); ?>">TestSample - FormUI</a></p>
+<p><a href="<?php echo $this->Response->url("test/log"); ?>">TestSample - Log</a></p>
+<p><a href="<?php echo $this->Response->url("test/encrypt"); ?>">TestSample - Encrypt</a></p>
+<p><a href="<?php echo $this->Response->url("test/session"); ?>">TestSample - Session</a></p>

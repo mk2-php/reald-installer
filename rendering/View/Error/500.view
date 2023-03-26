@@ -15,7 +15,7 @@ body{
     left:0;
     width:100%;
     top:0;
-    height:70px;
+    height:120px;
 }
 .title span{
     background:#c00;
@@ -29,6 +29,8 @@ body{
 .title h1{
     font-size:18px;
     margin:0;
+    padding:0;
+    line-height:1.5rem;
     margin-top:10px;
 }
 .content .trace{
@@ -38,7 +40,7 @@ body{
     color:#fff;
     width:100%;
     position:fixed;
-    top:70px;
+    top:100px;
     left:0;
     bottom:0;
     width:300px;
@@ -62,7 +64,7 @@ body{
 .content .trace-content{
     position:fixed;
     left:300px;
-    top:70px;
+    top:100px;
     right:0;
     bottom:0;
     padding:20px;

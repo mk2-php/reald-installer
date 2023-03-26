@@ -1,16 +1,62 @@
 {
     "repositories": [
         {
-            "type": "vcs",
-            "url": "../reald-core/"
+            "type": "path",
+            "url": "../reald-core/",
+            "options": {
+                "symlink": true
+            }
         },
         {
-            "type": "vcs",
-            "url": "../reald-orm/"
+            "type": "path",
+            "url": "../reald-orm/",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../reald-validate/",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../reald-formui/",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../reald-log/",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../reald-encrypt/",
+            "options": {
+                "symlink": true
+            }
+        },
+        {
+            "type": "path",
+            "url": "../reald-session/",
+            "options": {
+                "symlink": true
+            }
         }
     ],
     "require": {
         "reald/core" : "dev-main",
-        "reald/orm" : "dev-master"
+        "reald/orm" : "dev-master",
+        "reald/validate" : "dev-main",
+        "reald/formui" : "dev-main",
+        "reald/log" : "dev-main",
+        "reald/encrypt" : "dev-main",
+        "reald/session" : "dev-main"
     }
 }
