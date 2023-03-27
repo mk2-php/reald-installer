@@ -1,1 +1,23 @@
 <h2>Session Sample</h2>
+
+<pre><?php print_r($_SESSION); ?></pre>
+<div><pre><?php print_r($session->read()); ?></pre></div>
+
+<?php echo $form->start(); ?>
+
+<table>
+<tr>
+    <th>value_1</th>
+    <td>
+        <?php echo $form->input("value_1"); ?>
+    </td>
+</tr>
+<tr>
+    <th></th>
+    <td>
+        <?php echo $form->submit("Save"); ?>
+    </td>
+</tr>
+</table>
+
+<?php echo $form->end(); ?>
